@@ -16,20 +16,12 @@ using Venda.Iterativa.ViewModel;
 
 namespace Venda.Iterativa
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
-        }
-
-        private void btnOlaMundo_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Olá mundo!");
         }
     }
 }

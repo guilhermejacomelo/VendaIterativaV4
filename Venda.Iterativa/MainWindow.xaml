@@ -41,9 +41,10 @@
                 Click="btnOlaMundo_Click"/>-->
 
             <Button x:Name="btnOlaMundo" Grid.Column="1" Grid.Row="1"
-                Style="{DynamicResource MaterialDesignFlatButton}"
-                Content="_CLIQUE AQUI!"
-                Click="btnOlaMundo_Click"/>
+                    Style="{DynamicResource MaterialDesignFlatButton}"
+                    Content="_CLIQUE AQUI!"
+                    Command="{Binding ListarProdutos}"
+                    CommandParameter="{Binding}"/>
         </Grid>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Venda.Iterativa.ViewModel;
 
 namespace Venda.Iterativa.UserControls
 {
-    /// <summary>
-    /// Interação lógica para ucListarProdutos.xam
-    /// </summary>
     public partial class ucListarProdutos : UserControl
     {
-        public ucListarProdutos()
+        private ucListarProdutos()
         {
             InitializeComponent();
+            DataContext = new ListarProdutosViewModel();
+        }
+
+        internal static void Exibir()
+        {
+            new Window() { Content = new ucListarProdutos(), }
+                .ShowDialog();
         }
     }
 }
