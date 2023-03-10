@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Venda.Iterativa.Classes;
+using Venda.Iterativa.Interfaces;
 using Venda.Iterativa.Model;
 
 namespace Venda.Iterativa.ViewModel
@@ -48,10 +45,11 @@ namespace Venda.Iterativa.ViewModel
 
         #region construtores
 
-        public ListarProdutosViewModel(UserControl userControl)
+        public ListarProdutosViewModel(UserControl userControl, IObserver observer)
             : base("Lista de Produtos") 
         {
             UserControl = userControl;
+            Add(observer);
             CarregarProdutos();
         }
 
