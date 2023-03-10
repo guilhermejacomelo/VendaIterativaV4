@@ -6,7 +6,7 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:local="clr-namespace:Venda.Iterativa"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowState="Maximized" Height="680" Width="720">
     
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">

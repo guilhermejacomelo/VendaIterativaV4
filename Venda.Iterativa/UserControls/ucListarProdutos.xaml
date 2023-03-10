@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Venda.Iterativa.UserControls"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
-             Height="450" Width="800">
+             mc:Ignorable="d" d:Height="680" d:Width="720">
     <Grid Background="#ECF0F1">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
