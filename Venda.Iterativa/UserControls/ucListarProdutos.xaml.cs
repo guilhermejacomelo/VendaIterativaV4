@@ -27,8 +27,13 @@ namespace Venda.Iterativa.UserControls
 
         internal static void Exibir()
         {
-            new Window() { Content = new ucListarProdutos(), }
-                .ShowDialog();
+            new Window() 
+            {
+                Content = new ucListarProdutos(),
+                Height = 2000,
+                Width = 2000,
+            }
+            .ShowDialog();
         }
     }
 }
