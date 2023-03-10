@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:Venda.Iterativa"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -16,35 +18,7 @@
             <TextBlock Text="{Binding Titulo}" FontSize="28" FontWeight="SemiBold"
                        FontFamily="Trebuchet MS" VerticalAlignment="Center"/>
         </StackPanel>
-        
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <!--<Button x:Name="btnOlaMundo" Grid.Column="1" Grid.Row="1"
-                Content="_CLIQUE AQUI!"
-                ToolTip="Ctrl + c" Height="Auto" Width="Auto"
-                VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
-                Background="DeepSkyBlue" Foreground="White"
-                BorderBrush="DeepSkyBlue" 
-                BorderThickness="1"
-                Margin="10" Cursor="Hand"
-                Click="btnOlaMundo_Click"/>-->
-
-            <Button x:Name="btnOlaMundo" Grid.Column="1" Grid.Row="1"
-                    Style="{DynamicResource MaterialDesignFlatButton}"
-                    Content="_CLIQUE AQUI!"
-                    Command="{Binding ListarProdutos}"
-                    CommandParameter="{Binding}"/>
-        </Grid>
+        <Frame Grid.Row="1" Content="{Binding UserControl}" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -22,7 +22,7 @@ namespace Venda.Iterativa.UserControls
         private ucListarProdutos()
         {
             InitializeComponent();
-            DataContext = new ListarProdutosViewModel();
+            DataContext = new ListarProdutosViewModel(this);
         }
 
         internal static void Exibir()

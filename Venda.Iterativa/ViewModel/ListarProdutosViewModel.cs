@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Venda.Iterativa.Classes;
 using Venda.Iterativa.Model;
@@ -13,6 +14,20 @@ namespace Venda.Iterativa.ViewModel
     internal sealed class ListarProdutosViewModel : AbstractViewModel
     {
         #region variaveis privadas
+
+        private const string C_DESCRICAO = "Sed sed enim vehicula, " +
+            "placerat enim ac, rutrum augue. Fusce tristique lacus " +
+            "tempus mattis convallis. Duis ac ultrices ex, " +
+            "sed ullamcorper leo. Etiam cursus consectetur sodales. " +
+            "Suspendisse congue nibh sed vestibulum interdum." +
+            " Duis convallis mauris sit amet justo fermentum aliquam." +
+            " Vestibulum congue pretium pharetra. Donec laoreet risus eu mattis " +
+            "congue. Pellentesque pulvinar finibus sagittis. Aliquam turpis ante," +
+            " luctus et magna quis, feugiat facilisis augue. Curabitur rutrum" +
+            " lorem at bibendum pellentesque. Nullam rhoncus, augue id imperdiet" +
+            " aliquam, nibh nisl gravida felis, interdum sagittis lacus augue" +
+            " non neque. Orci varius natoque penatibus et magnis dis parturient" +
+            " montes, nascetur ridiculus mus.";
 
         private ObservableCollection<ProdutoModel> _produtos 
             =  new ObservableCollection<ProdutoModel>();
@@ -27,12 +42,16 @@ namespace Venda.Iterativa.ViewModel
             set => SetField(ref _produtos, value);
         }
 
+        public UserControl UserControl { get; private set; }
+
         #endregion propriedades
 
         #region construtores
 
-        public ListarProdutosViewModel() : base("Lista de Produtos") 
+        public ListarProdutosViewModel(UserControl userControl)
+            : base("Lista de Produtos") 
         {
+            UserControl = userControl;
             CarregarProdutos();
         }
 
@@ -49,7 +68,7 @@ namespace Venda.Iterativa.ViewModel
                 Imagem = new BitmapImage(
                     new Uri(@"..\net6.0-windows\Imagens\batata.png", UriKind.Relative)),
                 Referencia = "Batata",
-                Descricao = "",
+                Descricao = C_DESCRICAO,
                 Estoque = 100.00m,
                 Preco = 8.90m,
             });
@@ -57,9 +76,9 @@ namespace Venda.Iterativa.ViewModel
             Produtos.Add(new ProdutoModel()
             {
                 Imagem = new BitmapImage(
-                    new Uri(@"..\net6.0-windows\Imagens\batata.png", UriKind.Relative)),
+                    new Uri(@"..\net6.0-windows\Imagens\combo.png", UriKind.Relative)),
                 Referencia = "Combo",
-                Descricao = "",
+                Descricao = C_DESCRICAO,
                 Estoque = 100.00m,
                 Preco = 38.90m,
             });
@@ -67,9 +86,9 @@ namespace Venda.Iterativa.ViewModel
             Produtos.Add(new ProdutoModel()
             {
                 Imagem = new BitmapImage(
-                    new Uri(@"..\net6.0-windows\Imagens\batata.png", UriKind.Relative)),
+                    new Uri(@"..\net6.0-windows\Imagens\lanche.jpg", UriKind.Relative)),
                 Referencia = "Lanche",
-                Descricao = "",
+                Descricao = C_DESCRICAO,
                 Estoque = 100.00m,
                 Preco = 19.90m,
             });
@@ -77,9 +96,9 @@ namespace Venda.Iterativa.ViewModel
             Produtos.Add(new ProdutoModel()
             {
                 Imagem = new BitmapImage(
-                    new Uri(@"..\net6.0-windows\Imagens\batata.png", UriKind.Relative)),
+                    new Uri(@"..\net6.0-windows\Imagens\refrigerante.png", UriKind.Relative)),
                 Referencia = "Refrigerante",
-                Descricao = "",
+                Descricao = C_DESCRICAO,
                 Estoque = 100.00m,
                 Preco = 4.50m,
             });

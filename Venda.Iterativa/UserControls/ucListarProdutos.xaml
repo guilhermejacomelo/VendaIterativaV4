@@ -16,7 +16,7 @@
         <Grid Grid.Row="0">
             <ScrollViewer Background="#FFF1F1F1">
                 <StackPanel Margin="10">
-                    <ListBox 
+                    <ListBox ItemsSource="{Binding Produtos}"
                              SelectionMode="Single">
                         <ListBox.Resources>
                             <Style TargetType="ListBox">
@@ -54,14 +54,14 @@
                                             </Border.Background>
                                         </Border>
 
-                                        <TextBlock Margin="5" Text="{Binding Descricao}" FontSize="17"/>
+                                        <TextBlock Margin="5" Text="{Binding Referencia}" FontSize="17"/>
 
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Margin="5 0" Text="R$" FontSize="15"/>
                                             <TextBlock Text="{Binding Preco}" FontSize="15"/>
                                         </StackPanel>
 
-                                        <TextBlock Text="{Binding Sobre}" 
+                                        <TextBlock Text="{Binding Descricao}" 
                                                    Margin="15 30 30 30"
                                                    TextWrapping="Wrap"
                                                    FontSize="12" VerticalAlignment="Center"
