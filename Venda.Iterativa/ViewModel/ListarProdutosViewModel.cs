@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Venda.Iterativa.Classes;
+using Venda.Iterativa.Commands;
 using Venda.Iterativa.Interfaces;
 using Venda.Iterativa.Model;
 
@@ -26,6 +27,8 @@ namespace Venda.Iterativa.ViewModel
             " non neque. Orci varius natoque penatibus et magnis dis parturient" +
             " montes, nascetur ridiculus mus.";
 
+        private ProdutoModel _produtoSelecionado = new ProdutoModel();
+        private PedidoModel _pedido = new PedidoModel();
         private ObservableCollection<ProdutoModel> _produtos 
             =  new ObservableCollection<ProdutoModel>();
 
@@ -39,9 +42,28 @@ namespace Venda.Iterativa.ViewModel
             set => SetField(ref _produtos, value);
         }
 
+        public PedidoModel Pedido
+        {
+            get => _pedido;
+            set => SetField(ref _pedido, value);
+        }
+
+        public ProdutoModel ProdutoSelecionado
+        {
+            get => _produtoSelecionado;
+            set => SetField(ref _produtoSelecionado, value);
+        }
+
         public UserControl UserControl { get; private set; }
 
         #endregion propriedades
+
+        #region comandos
+
+        public AdicionarProdutoPedidoCommand Adicionar { get; private set; }
+            = new AdicionarProdutoPedidoCommand(); 
+
+        #endregion comandos
 
         #region construtores
 
@@ -97,7 +119,7 @@ namespace Venda.Iterativa.ViewModel
                     new Uri(@"..\net6.0-windows\Imagens\refrigerante.png", UriKind.Relative)),
                 Referencia = "Refrigerante",
                 Descricao = C_DESCRICAO,
-                Estoque = 100.00m,
+                Estoque = 1.00m,
                 Preco = 4.50m,
             });
         }

@@ -16,6 +16,7 @@
             <ScrollViewer Background="#FFF1F1F1">
                 <StackPanel Margin="10">
                     <ListBox ItemsSource="{Binding Produtos}"
+                             SelectedItem="{Binding ProdutoSelecionado}"
                              SelectionMode="Single">
                         <ListBox.Resources>
                             <Style TargetType="ListBox">
@@ -84,6 +85,8 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
                         VerticalAlignment="Center">
                 <Button Style="{DynamicResource MaterialDesignFlatAccentButton}"
+                        CommandParameter="{Binding}"
+                        Command="{Binding Adicionar, UpdateSourceTrigger=PropertyChanged}"
                         Content="_Adicionar" Foreground="Black"/>
             </StackPanel>
 
