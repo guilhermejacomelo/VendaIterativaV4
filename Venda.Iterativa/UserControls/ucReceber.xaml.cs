@@ -1,26 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
+using Venda.Iterativa.Interfaces;
 using Venda.Iterativa.Model;
+using Venda.Iterativa.ViewModel;
 
 namespace Venda.Iterativa.UserControls
 {
     public partial class ucReceber : UserControl
     {
-        private ucReceber(PedidoModel pedido)
+        private ucReceber(IObserver observer, PedidoModel pedido)
         {
             InitializeComponent();
+            DataContext = new ReceberViewModel(observer, pedido);
+        }
+
+        internal static PedidoModel Exibir(IObserver observer,
+            PedidoModel pedido)
+        {
+            var tela = new ucReceber(observer, pedido);
+            var vm = tela.DataContext as ReceberViewModel;
+
+            vm.Notify();
+
+            return vm.Pedido;
         }
     }
 }

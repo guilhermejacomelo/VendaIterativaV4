@@ -61,7 +61,10 @@ namespace Venda.Iterativa.ViewModel
         #region comandos
 
         public AdicionarProdutoPedidoCommand Adicionar { get; private set; }
-            = new AdicionarProdutoPedidoCommand(); 
+            = new AdicionarProdutoPedidoCommand();
+
+        public ReceberPedidoCommand Receber { get; private set; }
+            = new ReceberPedidoCommand();
 
         #endregion comandos
 

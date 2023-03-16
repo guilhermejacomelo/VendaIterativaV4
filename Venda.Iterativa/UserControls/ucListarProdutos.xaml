@@ -98,7 +98,8 @@
                            Margin="5 10 0 0" FontSize="16"/>
 
                 <Button Style="{DynamicResource MaterialDesignFlatAccentButton}"
-                        Content="_Finalizar" Margin="0 5 0 0" Foreground="Black"/>
+                        Content="_Receber" Margin="0 5 0 0" Foreground="Black"
+                        CommandParameter="{Binding}" Command="{Binding Receber}"/>
             </StackPanel>
         </Grid>
     </Grid>
