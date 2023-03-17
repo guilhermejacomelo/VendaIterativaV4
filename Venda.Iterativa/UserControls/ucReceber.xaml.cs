@@ -10,7 +10,7 @@ namespace Venda.Iterativa.UserControls
         private ucReceber(IObserver observer, PedidoModel pedido)
         {
             InitializeComponent();
-            DataContext = new ReceberViewModel(observer, pedido);
+            DataContext = new ReceberViewModel(this, observer, pedido);
         }
 
         internal static PedidoModel Exibir(IObserver observer,

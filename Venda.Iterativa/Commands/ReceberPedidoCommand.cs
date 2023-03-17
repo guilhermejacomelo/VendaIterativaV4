@@ -2,6 +2,7 @@
 using System.Windows;
 using Venda.Iterativa.Classes;
 using Venda.Iterativa.UserControls;
+using Venda.Iterativa.ViewModel;
 
 namespace Venda.Iterativa.Commands
 {
@@ -11,7 +12,9 @@ namespace Venda.Iterativa.Commands
         {
             try
             {
-                ucReceber.Exibir(null, null);
+                var vm = parameter as ListarProdutosViewModel;
+                vm.Pedido = ucReceber
+                    .Exibir(vm.MainUserControl, vm.Pedido);
             }
             catch (Exception ex)
             {

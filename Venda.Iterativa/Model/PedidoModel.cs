@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,11 @@ namespace Venda.Iterativa.Model
 {
     internal sealed class PedidoModel : AbstractModel
     {
-        private List<ProdutoModel> _produtos= new List<ProdutoModel>();
+        private ObservableCollection<ProdutoModel> _produtos
+            = new ObservableCollection<ProdutoModel>();
         private decimal _total = 0.00m;
 
-        public List<ProdutoModel> Produtos 
+        public ObservableCollection<ProdutoModel> Produtos 
         {
             get => _produtos;
             set => SetField(ref _produtos, value);

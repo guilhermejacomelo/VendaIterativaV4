@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using Venda.Iterativa.Classes;
 using Venda.Iterativa.Interfaces;
 using Venda.Iterativa.Model;
@@ -19,11 +20,14 @@ namespace Venda.Iterativa.ViewModel
             set => SetField(ref _pedido, value);
         }
 
-        public ReceberViewModel(IObserver observer, PedidoModel pedido) 
-            : base("UMFG | Receber")
+        public ReceberViewModel(UserControl userControl, IObserver observer,
+            PedidoModel pedido) : base("UMFG | Receber")
         {
-            Add(observer ?? throw new ArgumentNullException(nameof(observer)));
+            UserControl = userControl;
+            MainUserControl = observer;
             Pedido = pedido ?? throw new ArgumentNullException(nameof(pedido));
+
+            Add(observer ?? throw new ArgumentNullException(nameof(observer)));
         }
     }
 }

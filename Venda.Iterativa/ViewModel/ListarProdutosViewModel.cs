@@ -54,8 +54,6 @@ namespace Venda.Iterativa.ViewModel
             set => SetField(ref _produtoSelecionado, value);
         }
 
-        public UserControl UserControl { get; private set; }
-
         #endregion propriedades
 
         #region comandos
@@ -70,10 +68,12 @@ namespace Venda.Iterativa.ViewModel
 
         #region construtores
 
-        public ListarProdutosViewModel(UserControl userControl, IObserver observer)
-            : base("Lista de Produtos") 
+        public ListarProdutosViewModel(UserControl userControl,
+            IObserver observer) : base("Lista de Produtos") 
         {
             UserControl = userControl;
+            MainUserControl = observer;
+
             Add(observer);
             CarregarProdutos();
         }
