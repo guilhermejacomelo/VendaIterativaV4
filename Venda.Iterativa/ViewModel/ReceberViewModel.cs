@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using Venda.Iterativa.Classes;
+using Venda.Iterativa.Commands;
 using Venda.Iterativa.Interfaces;
 using Venda.Iterativa.Model;
 
@@ -13,6 +14,7 @@ namespace Venda.Iterativa.ViewModel
     internal sealed class ReceberViewModel : AbstractViewModel
     {
         private PedidoModel _pedido = new PedidoModel();
+        private FinalizarPedidoCommand _finalizarPedido = new FinalizarPedidoCommand();
 
         public PedidoModel Pedido
         {
@@ -28,6 +30,11 @@ namespace Venda.Iterativa.ViewModel
             Pedido = pedido ?? throw new ArgumentNullException(nameof(pedido));
 
             Add(observer ?? throw new ArgumentNullException(nameof(observer)));
+        }
+        public FinalizarPedidoCommand Finalizar
+        {
+            get => _finalizarPedido;
+            set => SetField(ref _finalizarPedido, value);
         }
     }
 }

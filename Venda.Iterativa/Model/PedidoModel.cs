@@ -13,6 +13,9 @@ namespace Venda.Iterativa.Model
         private ObservableCollection<ProdutoModel> _produtos
             = new ObservableCollection<ProdutoModel>();
         private decimal _total = 0.00m;
+        private long _CartaoDeCredito;
+        private DateTime _DataValidade;
+        private int _CCV;
 
         public ObservableCollection<ProdutoModel> Produtos 
         {
@@ -24,6 +27,21 @@ namespace Venda.Iterativa.Model
         {
             get => _total;
             set=> SetField(ref _total, value);
+        }
+        public long CartaoDeCredito
+        {
+            get => _CartaoDeCredito;
+            set => SetField(ref _CartaoDeCredito, value);
+        }        
+        public DateTime DataValidade
+        {
+            get => _DataValidade;
+            set => SetField(ref _DataValidade, value);
+        }       
+        public int CCV
+        {
+            get => _CCV;
+            set => SetField(ref _CCV, value);
         }
     }
 }

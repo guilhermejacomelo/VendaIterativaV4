@@ -96,5 +96,60 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+
+        <Border Background="DarkGray" Grid.Row="1"  Grid.Column="1"  
+                     Width="350" HorizontalAlignment="Right" Margin="0 50 0 0" Padding="50 0 0 0">
+            <StackPanel >
+                <TextBlock Text="Cartão de credito" FontSize="22" 
+                                               HorizontalAlignment="Left" 
+                                               Margin="0 55 0 0"
+                                               FontWeight="SemiBold"
+                                               Foreground="Gold"/>
+                <TextBlock Text="Selecione bandeira"
+                                               FontSize="16"
+                                               HorizontalAlignment="Left"
+                                               Margin="0 30 0 0"
+                                               FontWeight="Regular"
+                                               Foreground="White"/>
+                <TextBlock Text="Número de cartão"
+                                               FontSize="16"
+                                               HorizontalAlignment="Left"
+                                               Margin="0 30 0 0"
+                                               FontWeight="Regular"
+                                               Foreground="White"/>
+                <TextBox VerticalAlignment="Center"
+                         Margin="0 5 100 0" Text="{Binding Pedido.CartaoDeCredito}"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel> 
+                        <TextBlock Text="Data de validade" 
+
+                                                   FontSize="16"
+                                                   VerticalAlignment="Center"
+                                                   Margin="0 15 0 0" 
+                                                   FontWeight="Regular"
+                                                   Foreground="White"/>
+
+                        <DatePicker SelectedDate="{Binding Pedido.DataValidade}"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="CCV" 
+                                                   FontSize="16"
+                                                   VerticalAlignment="Center"
+                                                   Margin="55 15 0 0"
+                                                   FontWeight="Regular"
+                                                   Foreground="White"
+                                                    />
+                        <TextBox VerticalAlignment="Center"
+                                 Margin="57 0 0 0" Text="{Binding Pedido.CCV}"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button Background="Green" 
+                        Content="_Finalizar" Margin="0 230 50 0" 
+                        CommandParameter="{Binding}" Command="{Binding Finalizar}"> 
+                    
+                </Button>
+            </StackPanel>
+        </Border>
+        
     </Grid>
 </UserControl>
